@@ -20,90 +20,30 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
+
+                        {% for post in posts %}
                         <div class="blog_list_item mb_50">
-                            <img class="img-fluid" src="{% static 'img/blog_list1.jpg' %}" alt="">
+                            <img class="img-fluid" src="{{ post.thumbnail.url }}" alt="">
                             <div class="blog_content">
                                 <div class="post_date">
-                                    <h2>14 <span>March</span></h2>
+                                    <h2>{{post.posted_at|date:'d'}}<span>{{post.posted_at|date:'F'}}</span></h2>
                                 </div>
                                 <div class="entry_post_info">
-                                    By: <a href="http://droitthemes.com/html/saasland/blog-list.html#">Admin</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">2 Comments</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">SaasLand</a>
+                                    By: <a href="#">{{post.user}}</a>
+                                    <!--<a href="http://droitthemes.com/html/saasland/blog-list.html#">2 Comments</a> -->
+                                    <a href="#">{{post.category}}</a>
                                 </div>
-                                <a href="http://droitthemes.com/html/saasland/blog-list.html#">
-                                    <h5 class="f_p f_size_20 f_500 t_color mb_20">Why I say old chap that is, spiffing
-                                        jolly good.</h5>
+                                <a href="/post/{{post.title}}">
+                                    <h5 class="f_p f_size_20 f_500 t_color mb_20">{{post.title}}</h5>
                                 </a>
-                                <p class="f_400 mb_20">Cheeky bugger amongst bugger knees up get stuffed mate what a
-                                    load of rubbish starkers dropped a clanger say boot, blow off cobblers butty mufty
-                                    spiffing Eaton the full monty the BBC a, posh chap.</p>
-                                <a href="http://droitthemes.com/html/saasland/blog-list.html#" class="learn_btn_two">Read More <i class="ti-arrow-right"></i></a>
+                                <p class="f_400 mb_20">
+                                {{ post.description |safe|truncatewords:"50"|linebreaks }}</p>
+                                <a href="/post/{{post.title}}" class="learn_btn_two">Read More <i class="ti-arrow-right"></i></a>
                             </div>
                         </div>
-                        <div class="blog_list_item mb_50">
-                            <img class="img-fluid" src="{% static 'img/blog_list2.jpg' %}" alt="">
-                            <div class="blog_content">
-                                <div class="post_date">
-                                    <h2>10 <span>April</span></h2>
-                                </div>
-                                <div class="entry_post_info">
-                                    By: <a href="http://droitthemes.com/html/saasland/blog-list.html#">Admin</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">2 Comments</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">SaasLand</a>
-                                </div>
-                                <a href="http://droitthemes.com/html/saasland/blog-list.html#">
-                                    <h5 class="f_p f_size_20 f_500 t_color mb_20">Why I say old chap that is, spiffing
-                                        jolly good.</h5>
-                                </a>
-                                <p class="f_400 mb_20">Cheeky bugger amongst bugger knees up get stuffed mate what a
-                                    load of rubbish starkers dropped a clanger say boot, blow off cobblers butty mufty
-                                    spiffing Eaton the full monty the BBC a, posh chap.</p>
-                                <a href="http://droitthemes.com/html/saasland/blog-list.html#" class="learn_btn_two">Read More <i class="ti-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="blog_list_item mb_50">
-                            <img class="/img-fluid" src="{% static 'img/blog_list3.jpg' %}" alt="">
-                            <div class="blog_content">
-                                <div class="post_date">
-                                    <h2>14 <span>July</span></h2>
-                                </div>
-                                <div class="entry_post_info">
-                                    By: <a href="http://droitthemes.com/html/saasland/blog-list.html#">Admin</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">2 Comments</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">SaasLand</a>
-                                </div>
-                                <a href="http://droitthemes.com/html/saasland/blog-list.html#">
-                                    <h5 class="f_p f_size_20 f_500 t_color mb_20">Why I say old chap that is, spiffing
-                                        jolly good.</h5>
-                                </a>
-                                <p class="f_400 mb_20">Cheeky bugger amongst bugger knees up get stuffed mate what a
-                                    load of rubbish starkers dropped a clanger say boot, blow off cobblers butty mufty
-                                    spiffing Eaton the full monty the BBC a, posh chap.</p>
-                                <a href="http://droitthemes.com/html/saasland/blog-list.html#" class="learn_btn_two">Read More <i class="ti-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="blog_list_item mb_50">
-                            <img class="img-fluid" src="{% static 'img/blog_list4.jpg' %}" alt="">
-                            <div class="blog_content">
-                                <div class="post_date">
-                                    <h2>10 <span>August</span></h2>
-                                </div>
-                                <div class="entry_post_info">
-                                    By: <a href="http://droitthemes.com/html/saasland/blog-list.html#">Admin</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">2 Comments</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">SaasLand</a>
-                                </div>
-                                <a href="http://droitthemes.com/html/saasland/blog-list.html#">
-                                    <h5 class="f_p f_size_20 f_500 t_color mb_20">Bloke cracking goal the full monty get
-                                        stuffed mate posh.</h5>
-                                </a>
-                                <p class="f_400 mb_20">Cheeky bugger amongst bugger knees up get stuffed mate what a
-                                    load of rubbish starkers dropped a clanger say boot, blow off cobblers butty mufty
-                                    spiffing Eaton the full monty the BBC a, posh chap.</p>
-                                <a href="http://droitthemes.com/html/saasland/blog-list.html#" class="learn_btn_two">Read More <i class="ti-arrow-right"></i></a>
-                            </div>
-                        </div>
+
+                        {% endfor %}
+                        
                         <ul class="list-unstyled page-numbers shop_page_number text-left mt_30">
                             <li><span aria-current="page" class="page-numbers current">1</span></li>
                             <li><a class="page-numbers" href="http://droitthemes.com/html/saasland/blog-list.html#">2</a></li>
@@ -182,14 +122,10 @@
                                     <div class="border_bottom"></div>
                                 </div>
                                 <ul class="list-unstyled">
-                                    <li> <a href="http://droitthemes.com/html/saasland/blog-list.html#"><span>Fashion</span><em>(54)</em></a> </li>
-                                    <li> <a href="http://droitthemes.com/html/saasland/blog-list.html#"><span>Food for thought</span><em>(83)</em></a> </li>
-                                    <li> <a href="http://droitthemes.com/html/saasland/blog-list.html#"><span>Gaming</span><em>(96)</em></a> </li>
-                                    <li> <a href="http://droitthemes.com/html/saasland/blog-list.html#"><span>Music</span><em>(38)</em></a> </li>
-                                    <li> <a href="http://droitthemes.com/html/saasland/blog-list.html#"><span>Uncategorized</span><em>(44)</em></a> </li>
-                                    <li> <a href="http://droitthemes.com/html/saasland/blog-list.html#"><span>SaasLand</span><em>(44)</em></a> </li>
-                                    <li> <a href="http://droitthemes.com/html/saasland/blog-list.html#"><span>Project Management</span><em>(44)</em></a> </li>
-                                    <li> <a href="http://droitthemes.com/html/saasland/blog-list.html#"><span>Wireframing</span><em>(44)</em></a> </li>
+                                    {% for category in categories %}
+                                    <li> <a href="http://droitthemes.com/html/saasland/blog-list.html#"><span>{{category.name}}</span><em></em></a> </li>
+                                    {% endfor %}
+
                                 </ul>
                             </div>
                             <div class="widget sidebar_widget widget_tag_cloud mt_60">
