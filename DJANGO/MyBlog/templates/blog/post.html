@@ -48,56 +48,30 @@
                             <h3 class="f_p f_size_20 t_color3">Related Post</h3>
                             <div class="border_bottom"></div>
                         </div>
+
                         <div class="row">
+
+                            {% for post in related_posts %}
                             <div class="col-lg-4 col-sm-6">
                                 <div class="blog_post_item">
                                     <div class="blog_img">
-                                        <img src="{% static 'img/post_img_1.png' %}" alt="">
+                                         <a href="/post/{{post.title}}">
+                                        <img src="{{post.thumbnail.url}}" alt=""></a>
                                     </div>
                                     <div class="blog_content">
                                         <div class="entry_post_info">
-                                            <a href="http://droitthemes.com/html/saasland/blog-single.html#">March 14, 2018</a>
+                                            <a href="#">{{post.posted_at}}</a>
                                         </div>
-                                        <a href="http://droitthemes.com/html/saasland/blog-single.html#">
-                                            <h5 class="f_p f_size_16 f_500 t_color">Why I say old chap that.</h5>
+                                        <a href="/post/{{post.title}}">
+                                            <h5 class="f_p f_size_16 f_500 t_color">{{post.title}}</h5>
                                         </a>
-                                        <p class="f_400 mb-0">Harry bits and bleeding crikey argy-bargy...</p>
+                                        
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="blog_post_item">
-                                    <div class="blog_img">
-                                        <img src="{% static 'img/post_img_2.png' %}" alt="">
-                                    </div>
-                                    <div class="blog_content">
-                                        <div class="entry_post_info">
-                                            <a href="http://droitthemes.com/html/saasland/blog-single.html#">April 14, 2017</a>
-                                        </div>
-                                        <a href="http://droitthemes.com/html/saasland/blog-single.html#">
-                                            <h5 class="f_p f_size_16 f_500 t_color">Bloke cracking goal the.</h5>
-                                        </a>
-                                        <p class="f_400 mb-0">Harry bits and bleeding crikey argy-bargy...</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="blog_post_item">
-                                    <div class="blog_img">
-                                        <img src="{% static 'img/post_img_3.png' %}" alt="">
-                                    </div>
-                                    <div class="blog_content">
-                                        <div class="entry_post_info">
-                                            <a href="http://droitthemes.com/html/saasland/blog-single.html#">March 15, 2016</a>
-                                        </div>
-                                        <a href="http://droitthemes.com/html/saasland/blog-single.html#">
-                                            <h5 class="f_p f_size_16 f_500 t_color">Oxford james bond.</h5>
-                                        </a>
-                                        <p class="f_400 mb-0">Harry bits and bleeding crikey argy-bargy...</p>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
+                        
                     </div>
                         <!-- End Recent Posts -->
 
@@ -108,56 +82,50 @@
                             <div class="border_bottom"></div>
                         </div>
                         <ul class="comment-box list-unstyled mb-0">
+
+                            {% for comment in comments %}
                             <li class="post_comment">
                                 <div class="media post_author mt_60">
                                     <div class="media-left">
-                                        <img class="rounded-circle" src="./single_post_files/comment1.png" alt="">
-                                        <a href="http://droitthemes.com/html/saasland/blog-single.html#" class="replay"><i class="ti-share"></i></a>
+                                        <img class="rounded-circle" src="{% static 'img/comment1.png' %}" alt="">
+                                        <a href="#" class="replay"><i class="ti-share"></i></a>
                                     </div>
                                     <div class="media-body">
-                                        <h5 class="f_p t_color3 f_size_18 f_500">Fletch Skinner</h5>
-                                        <h6 class="f_p f_size_15 f_400 mb_20">Just Now</h6>
-                                        <p>Tinkety tonk old fruit Harry gormless morish Jeffrey what a load of rubbish
-                                            burke what a plonker hunky-dory cor blimey guvnor.!</p>
+                                        <h5 class="f_p t_color3 f_size_18 f_500">{{comment.name}}</h5>
+                                        <h6 class="f_p f_size_15 f_400 mb_20">{{comment.commented_at}}</h6>
+                                        <p>{{comment.comment}}</p>
                                     </div>
                                 </div>
-                                <ul class="reply-comment list-unstyled">
-                                    <li class="post-comment">
-                                        <div class="media post_author comment-content">
-                                            <div class="media-left">
-                                                <img class="rounded-circle" src="./single_post_files/comment2.png" alt="">
-                                                <a href="http://droitthemes.com/html/saasland/blog-single.html#" class="replay"><i class="ti-share"></i></a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h5 class="f_p t_color3 f_size_18 f_500">Hans Down</h5>
-                                                <h6 class="f_p f_size_15 f_400 mb_20">44 mins ago</h6>
-                                                <p>Dropped a clanger up the kyver easy peasy vagabond victoria sponge
-                                                    Charles tinkety tonk old fruit argy.!</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+
                             </li>
+                            {% endfor %}
                         </ul>
                         
+                        <!-- comment form section comment -->
                         <div class="widget_title mt_100">
                             <h3 class="f_p f_size_20 t_color3">Leave a Comment</h3>
                             <div class="border_bottom"></div>
                         </div>
 
-                        <form class="get_quote_form row" action="http://droitthemes.com/html/saasland/blog-single.html#" method="post">
+                        <form class="get_quote_form row" action="{% url 'comment' %}" method="post">
+                            {% csrf_token %}
                             <div class="col-md-12 form-group">
-                                <textarea class="form-control message" placeholder="Comment"></textarea>
+                                <textarea class="form-control message" name='comment' placeholder="Comment"></textarea>
                             </div>
                             <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" id="name" placeholder="Name">
+                                <input type="text" class="form-control" id="name" name='name' placeholder="Name">
                             </div>
                             <div class="col-md-6 form-group">
-                                <input type="email" class="form-control" id="email" placeholder="Email">
+                                <input type="email" class="form-control" id="email" name='email' placeholder="Email">
                             </div>
                             <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="website" placeholder="Website (optional)">
+                                <input type="text" class="form-control" id="website"  name='website' placeholder="Website (optional)">
                             </div>
+
+                            <div class="col-md-12 form-group">
+                                <input type="hidden" class="form-control" id="website" name='id' value="{{post.id}}"    placeholder="Website (optional)">
+                            </div>
+
                             <div class="col-md-12"><button class="btn btn_three btn_hover f_size_15 f_500" type="submit">Post Comment</button></div>
                         </form>
                         
@@ -176,8 +144,8 @@
                     <div class="col-lg-4">
                         <div class="blog-sidebar">
                             <div class="widget sidebar_widget widget_search">
-                                <form action="http://droitthemes.com/html/saasland/blog-list.html#" class="search-form input-group">
-                                    <input type="search" class="form-control widget_input" placeholder="Search">
+                                 <form action="{% url 'search' %}" class="search-form input-group" method='get'>
+                                    <input type="search" class="form-control widget_input" name='keyword' placeholder="Search here..">
                                     <button type="submit"><i class="ti-search"></i></button>
                                 </form>
                             </div>
@@ -186,59 +154,27 @@
                                     <h3 class="f_p f_size_20 t_color3">Recent posts</h3>
                                     <div class="border_bottom"></div>
                                 </div>
+
+
+                                {% for post in recent_posts %}
                                 <div class="media post_item">
-                                    <img src="{% static 'img/post_1.jpg' %}" alt="">
+                                     <a href="/post/{{post.title}}">
+                                    <img src="{{post.thumbnail.url}}" class="img-responsive img-thumbnail"  height="75" width="200" alt=""></a>
                                     <div class="media-body">
-                                        <a href="http://droitthemes.com/html/saasland/blog-list.html#">
-                                            <h3 class="f_size_16 f_p f_400">Proin gravi nibh velit auctor aliquet
-                                                aenean.</h3>
+                                        <a href="#">
+                                            <h3 class="f_size_16 f_p f_400"> <a href="/post/{{post.title}}">{{post.title}}</a></h3>
                                         </a>
                                         <div class="entry_post_info">
-                                            By: <a href="http://droitthemes.com/html/saasland/blog-list.html#">Admin</a>
-                                            <a href="http://droitthemes.com/html/saasland/blog-list.html#">March 14, 2018</a>
+                                            <b>By:</b> <a href="#">{{post.user}}</a>
+                                            <a href="#">{{post.posted_at}}</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="media post_item">
-                                    <img src="{% static 'img/post_2.jpg' %}" alt="">
-                                    <div class="media-body">
-                                        <a href="http://droitthemes.com/html/saasland/blog-list.html#">
-                                            <h3 class="f_size_16 f_p f_400">Proin gravi nibh velit auctor aliquet
-                                                aenean.</h3>
-                                        </a>
-                                        <div class="entry_post_info">
-                                            By: <a href="http://droitthemes.com/html/saasland/blog-list.html#">Admin</a>
-                                            <a href="http://droitthemes.com/html/saasland/blog-list.html#">March 14, 2018</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="{% static 'img/post_3.jpg' %}" alt="">
-                                    <div class="media-body">
-                                        <a href="http://droitthemes.com/html/saasland/blog-list.html#">
-                                            <h3 class="f_size_16 f_p f_400">Proin gravi nibh velit auctor aliquet
-                                                aenean.</h3>
-                                        </a>
-                                        <div class="entry_post_info">
-                                            By: <a href="http://droitthemes.com/html/saasland/blog-list.html#">Admin</a>
-                                            <a href="http://droitthemes.com/html/saasland/blog-list.html#">March 14, 2018</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="media post_item">
-                                    <img src="{% static 'img/post_4.jpg' %}" alt="">
-                                    <div class="media-body">
-                                        <a href="http://droitthemes.com/html/saasland/blog-list.html#">
-                                            <h3 class="f_size_16 f_p f_400">Proin gravi nibh velit auctor aliquet
-                                                aenean.</h3>
-                                        </a>
-                                        <div class="entry_post_info">
-                                            By: <a href="http://droitthemes.com/html/saasland/blog-list.html#">Admin</a>
-                                            <a href="http://droitthemes.com/html/saasland/blog-list.html#">March 14, 2018</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
+
+
+
                             <div class="widget sidebar_widget widget_categorie mt_60">
                                 <div class="widget_title">
                                     <h3 class="f_p f_size_20 t_color3">Categories</h3>
@@ -246,11 +182,13 @@
                                 </div>
                                 <ul class="list-unstyled">
                                     {% for category in categories %}
-                                    <li> <a href="http://droitthemes.com/html/saasland/blog-list.html#"><span>{{category.name}}</span><em></em></a> </li>
+                                    <li> <a href="category/{{category.name}}/"><span>{{category.name}}</span><em></em></a> </li>
                                     {% endfor %}
 
                                 </ul>
                             </div>
+
+
                             <div class="widget sidebar_widget widget_tag_cloud mt_60">
                                 <div class="widget_title">
                                     <h3 class="f_p f_size_20 t_color3">Tags</h3>

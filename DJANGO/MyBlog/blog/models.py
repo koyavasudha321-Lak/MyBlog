@@ -32,3 +32,23 @@ class Post(models.Model):
 
    def __str__(self):
       return self.title
+
+
+class Comment(models.Model):
+   post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+   name = models.CharField(max_length=255)
+   email = models.CharField(max_length=255)
+   website = models.CharField(null=True, blank=True, max_length=100)
+   comment = models.TextField()
+   commented_at = models.DateTimeField(default=datetime.now)
+   is_resolved = models.BooleanField(default=False)
+
+
+   class Meta: 
+      verbose_name = ("Comment")
+      verbose_name_plural = ("Comments")
+
+   def __str__(self):
+      return self.email
+
+

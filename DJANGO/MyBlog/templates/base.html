@@ -55,14 +55,14 @@
                                 
                             </li>
 
-                            <li class="dropdown submenu nav-item"><a title="Pages" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="http://droitthemes.com/html/saasland/blog-list.html#">Pages</a>
+                            
                                 
-                            </li>
                             <li class="nav-item ">
                                 <a class="nav-link" href="{% url 'about' %}" >
                                     About Us
                                 </a>
-                                                            </li>
+                            </li>
+
                             <li class="nav-item ">
                                 <a class="nav-link " href="{% url 'contact' %}" >
                                     Contact Us
@@ -73,7 +73,7 @@
                             {% if request.user.is_authenticated %}
                             <li class="nav-item ">
                                 <a class="nav-link" href="#" >
-                                    {{request.user}}
+                                    {{request.user.first_name}}
                                 </a>
                                 
                             </li> 
@@ -92,6 +92,14 @@
                                 
                             </li> 
                             {% else %}
+
+                            <li class="nav-item ">
+                                <a class="nav-link " href="{% url 'blog' %}" >
+                                    Blog
+                                </a>
+                                
+                            </li>
+
                              <li class="nav-item ">
                                 <a class="nav-link" href="{% url 'signup' %}" >
                                     Sign Up
