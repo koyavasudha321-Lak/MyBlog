@@ -1,13 +1,17 @@
 from django.shortcuts import render,redirect
 from .models import Category,Post,Comment
+from django.core.paginator import Paginator
 
 # Create your views here.
 def blog(request):
 	posts = Post.objects.filter(is_published=True).order_by('posted_at')
 	categories = Category.objects.all()
+	posts = Paginator(posts, 5) # Show 25 contacts per page.
+	page = request.GET.get('page')
+	posts = posts.get_page(page)
 
 	context = {
-		'posts' : posts,
+		'posts': posts,
 		'categories':categories,
 
 	}
