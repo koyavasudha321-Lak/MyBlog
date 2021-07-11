@@ -74,13 +74,13 @@ def search_view(request):
 	return render(request,'blog/blog.html', context)
 
 def get_category(request,cat):
-	print('===='*10,cat)
+	#print('===='*10,cat)
 	category = Category.objects.get(name=cat)
 	posts = Post.objects.filter(category=category)
-	print('-----' * 10,posts)
+	#print('-----' * 10,posts)
 
 	categories = Category.objects.all()
-	print('????----' * 4,categories)
+	#print('????----' * 4,categories)
 
 	context = {
 		'posts':posts,

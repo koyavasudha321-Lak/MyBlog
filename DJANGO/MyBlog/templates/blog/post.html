@@ -8,7 +8,7 @@
     {% block content %}
 
         <section class="breadcrumb_area">
-            <img class="breadcrumb_shap" src="../static/img/banner_bg.png" alt="">
+            <img class="breadcrumb_shap" src="{% static 'img/banner_bg.png' %}" alt="">
             <div class="container">
                 <div class="breadcrumb_content text-center">
                     <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Blog List</h1>
@@ -146,7 +146,7 @@
                             <div class="widget sidebar_widget widget_search">
                                  <form action="{% url 'search' %}" class="search-form input-group" method='get'>
                                     <input type="search" class="form-control widget_input" name='keyword' placeholder="Search here..">
-                                    <button type="submit"><i class="ti-search"></i></button>
+                                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                                 </form>
                             </div>
                             <div class="widget sidebar_widget widget_recent_post mt_60">
@@ -182,7 +182,7 @@
                                 </div>
                                 <ul class="list-unstyled">
                                     {% for category in categories %}
-                                    <li> <a href="category/{{category.name}}/"><span>{{category.name}}</span><em></em></a> </li>
+                                    <li> <a href="/category/{{category.name}}/"><span>{{category.name}}</span><em></em></a> </li>
                                     {% endfor %}
 
                                 </ul>
@@ -195,14 +195,14 @@
                                     <div class="border_bottom"></div>
                                 </div>
                                 <div class="post-tags">
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">SaasLand</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Web Design</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Saas</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Cooling System</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Corporate</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Software</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Landing</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Wheels</a>
+                                    <a href="#">Python</a>
+                                    <a href="#">Django</a>
+                                    <a href="#">Python2</a>
+                                    <a href="#">JavaScript</a>
+                                    <a href="#">JS</a>
+                                    <a href="#">Java</a>
+                                    <a href="#">HTML</a>
+                                    <a href="#">CSS</a>
                                 </div>
                             </div>
                         </div>

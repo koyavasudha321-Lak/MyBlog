@@ -50,6 +50,7 @@
 
                     <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
                         <ul class="navbar-nav menu w_menu ml-auto mr-auto">
+                            {% if request.user.is_authenticated %}
                             <li class="nav-item ">
                                 <a class="nav-link " href="{% url 'blog' %}" >
                                     Home
@@ -61,18 +62,18 @@
                                 
                             <li class="nav-item ">
                                 <a class="nav-link" href="{% url 'about' %}" >
-                                    About Us
+                                    About
                                 </a>
                             </li>
 
                             <li class="nav-item ">
                                 <a class="nav-link " href="{% url 'contact' %}" >
-                                    Contact Us
+                                    Contact 
                                 </a>
                                 
                             </li>
 
-                            {% if request.user.is_authenticated %}
+                         
                             <li class="nav-item ">
                                 <a class="nav-link" href="#" >
                                     {{request.user.first_name}}
@@ -96,7 +97,7 @@
                             {% else %}
 
                             <li class="nav-item ">
-                                <a class="nav-link " href="{% url 'blog' %}" >
+                                <a class="nav-link " href="{% url 'home' %}" >
                                     Blog
                                 </a>
                                 
@@ -135,52 +136,27 @@
 
                                 <div class="widget-wrap">
                                     <p class="f_400 f_p f_size_15 mb-0 l_height34"><span>Email:</span> <a href="#" class="f_400">Blog@gmail.com</a></p>
-                                    <p class="f_400 f_p f_size_15 mb-0 l_height34"><span>Phone:</span> <a href="#" class="f_400">+00 0000 0000</a></p>
+                                    <p class="f_400 f_p f_size_15 mb-0 l_height34"><span>Phone:</span> <a href="#" class="f_400">+91 00000 00000</a></p>
                                 </div>
-                                <form action="http://droitthemes.com/html/saasland/blog-list.html#" class="f_subscribe mailchimp" method="post" novalidate="true">
+                                <form action="#" class="f_subscribe mailchimp" method="post" novalidate="true">
                                     <input type="text" name="EMAIL" class="form-control memail" placeholder="Email">
-                                    <button class="btn btn-submit" type="submit"><i class="ti-arrow-right"></i></button>
+                                    <button class="btn btn-submit" type="submit"><i class="fa fa-envelope" aria-hidden="true"></i></button>
                                     <p class="mchimp-errmessage" style="display: none;"></p>
                                     <p class="mchimp-sucmessage" style="display: none;"></p>
                                 </form>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="f_widget about-widget pl_40">
-                                <h3 class="f-title f_600 t_color f_size_18 mb_40">About Us</h3>
-                                <ul class="list-unstyled f_list">
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Company</a></li>
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Leadership</a></li>
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Diversity</a></li>
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Jobs</a></li>
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Press</a></li>
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Wavelength</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
+                        
+                        <div class="col-lg-4 col-md-6 ml-auto">
                             <div class="f_widget about-widget">
-                                <h3 class="f-title f_600 t_color f_size_18 mb_40">Workflow Solutions</h3>
+                                <h3 class="f-title f_600 t_color f_size_18 mb_40">Useful Solutions</h3>
                                 <ul class="list-unstyled f_list">
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Project Management</a></li>
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Agile</a></li>
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Task Management</a></li>
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Reporting</a></li>
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Work Tracking</a></li>
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">See All Uses</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="f_widget about-widget">
-                                <h3 class="f-title f_600 t_color f_size_18 mb_40">Team Solutions</h3>
-                                <ul class="list-unstyled f_list">
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Engineering</a></li>
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Designers</a></li>
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Sales</a></li>
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Developers</a></li>
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">Marketing</a></li>
-                                    <li><a href="http://droitthemes.com/html/saasland/blog-list.html#">See All Teams</a></li>
+                                    <li><a href="#">Python</a></li>
+                                    <li><a href="#">FrontEnd</a></li>
+                                    <li><a href="#">FrameWorks</a></li>
+                                    <li><a href="#">Developers</a></li>
+                                    <li><a href="#">Students</a></li>
+                                  
                                 </ul>
                             </div>
                         </div>
@@ -231,5 +207,34 @@
     <script src="{% static 'js/slick.js.download' %}"></script>
     <script src="{% static 'js/main.js.download' %}"></script>
 
+    <script>
+      function initMap() {
+        var test= {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: test
+        });
+        var marker = new google.maps.Marker({
+          position: test,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src=
+"https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+
+
+
+
+<iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;" __idm_frm__="1079" src="{% static '/img/saved_resource.html' %}"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" style="display: none;" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}"></div>
+
+
+
+
 </body></html>
-<iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;" __idm_frm__="1079" src="../static/img/saved_resource.html"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" style="display: none;" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}"></div>
+
+
+
+

@@ -72,7 +72,7 @@
                             <div class="widget sidebar_widget widget_search">
                                 <form action="{% url 'search' %}" class="search-form input-group" method='get'>
                                     <input type="search" class="form-control widget_input" name='keyword' placeholder="Search here..">
-                                    <button type="submit"><i class="ti-search"></i></button>
+                                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                                 </form>
                             </div>
                             <div class="widget sidebar_widget widget_recent_post mt_60">
@@ -90,7 +90,7 @@
                                             <h3 class="f_size_16 f_p f_400">{{post.title}}</h3>
                                         </a>
                                         <div class="entry_post_info">
-                                            By: <a href="#">{{post.user}}</a>
+                                            <b>By:</b> <a href="#">{{post.user}}</a>
                                             <a href="#">{{post.posted_at}}</a>
                                         </div>
                                     </div>
@@ -105,7 +105,7 @@
                                 </div>
                                 <ul class="list-unstyled">
                                     {% for category in categories %}
-                                    <li> <a href="category/{{category.name}}/"><span>{{category.name}}</span><em></em></a> </li>
+                                    <li> <a href="/category/{{category.name}}/"><span>{{category.name}}</span><em></em></a> </li>
                                     {% endfor %}
 
                                 </ul>
@@ -117,14 +117,14 @@
                                     <div class="border_bottom"></div>
                                 </div>
                                 <div class="post-tags">
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">SaasLand</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Web Design</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Saas</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Cooling System</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Corporate</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Software</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Landing</a>
-                                    <a href="http://droitthemes.com/html/saasland/blog-list.html#">Wheels</a>
+                                    <a href="#">Python</a>
+                                    <a href="#">Django</a>
+                                    <a href="#">Python2</a>
+                                    <a href="#">JavaScript</a>
+                                    <a href="#">JS</a>
+                                    <a href="#">Java</a>
+                                    <a href="#">HTML</a>
+                                    <a href="#">CSS</a>
                                 </div>
                             </div>
                         </div>

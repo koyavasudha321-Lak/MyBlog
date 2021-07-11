@@ -15730,7 +15730,7 @@ a .h_head:hover {
 }
 
 .pos_footer_bottom {
-  padding-top: 80px;
+  padding-top: 50px;
   padding-bottom: 30px;
 }
 .pos_footer_bottom .pos_women {
@@ -21658,9 +21658,9 @@ a .h_head:hover {
 .footer_bottom {
   font-size: 14px;
   font-weight: 300;
-  line-height: 20px;
+  line-height: 5px;
   color: #7f88a6;
-  padding: 27px 0px;
+  padding: 10px 0px;
 }
 .footer_bottom p a {
   transition: color 0.2s linear;
@@ -21822,7 +21822,7 @@ a .h_head:hover {
 /*=============== footer_area_four css =============*/
 .footer_area_four .footer_top {
   border-bottom: 1px solid #e9ecf3;
-  padding: 120px 0px 70px;
+  padding: 30px 0px 30px;
 }
 .footer_area_four .footer_top .f_widget.about-widget .f_list li a:hover {
   color: #5e2ced;
