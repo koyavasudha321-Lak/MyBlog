@@ -78,7 +78,11 @@
                         <!-- Comment -->
 
                         <div class="widget_title mt_100">
-                            <h3 class="f_p f_size_20 t_color3">2 Comment</h3>
+                            {% if comments.count > 1 %}
+                                <h3 class="f_p f_size_20 t_color3">{{comments.count}} Comments</h3>
+                            {% else %}
+                                <h3 class="f_p f_size_20 t_color3">{{comments.count}} Comment</h3>
+                            {% endif %}
                             <div class="border_bottom"></div>
                         </div>
                         <ul class="comment-box list-unstyled mb-0">
