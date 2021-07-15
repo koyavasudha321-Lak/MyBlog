@@ -1,8 +1,15 @@
 from django.shortcuts import render,redirect
+from django.contrib.auth.models import User
+
+
+
+
+
 from .models import Contact
 
 # Create your views here.
 def home(request):
+
 	return render(request, 'blog/blog.html')
 
 def contact(request):
@@ -19,3 +26,11 @@ def contact(request):
 
 def about(request):
 	return render(request, 'pages/about.html')
+
+def dash(request):
+	count = User.objects.count()
+	
+	context = {
+		'count': count,
+		}
+	return render(request, 'pages/dashboard.html', context)

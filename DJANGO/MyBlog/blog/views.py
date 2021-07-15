@@ -1,19 +1,21 @@
 from django.shortcuts import render,redirect
 from .models import Category,Post,Comment
+from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 
 # Create your views here.
 def blog(request):
 	posts = Post.objects.filter(is_published=True).order_by('posted_at')
 	categories = Category.objects.all()
-	posts = Paginator(posts, 5) # Show 25 contacts per page.
+	posts = Paginator(posts, 3) # Show 25 contacts per page.
 	page = request.GET.get('page')
 	posts = posts.get_page(page)
+	count = User.objects.count()
 
 	context = {
 		'posts': posts,
 		'categories':categories,
-
+		'count': count,
 	}
 	return render(request,'blog/blog.html',context)
 
@@ -21,6 +23,7 @@ def post(request,title):
 	#print(title)
 	post = Post.objects.get(title=title)
 	category = post.category
+	
 	related_posts = Post.objects.filter(category=category)
 
 
@@ -66,6 +69,9 @@ def search_view(request):
 		#print('==========' * 5,keyword)
 		posts = Post.objects.filter(title__icontains=keyword)
 		categories = Category.objects.all()
+		posts = Paginator(posts, 1) # Show 1 contacts per page.
+		page = request.GET.get('page')
+		posts = posts.get_page(page)
 		#print('---' * 10, posts)
 		context = {
 			'posts':posts,
@@ -76,15 +82,26 @@ def search_view(request):
 def get_category(request,cat):
 	#print('===='*10,cat)
 	category = Category.objects.get(name=cat)
+
 	posts = Post.objects.filter(category=category)
 	#print('-----' * 10,posts)
 
 	categories = Category.objects.all()
 	#print('????----' * 4,categories)
+	posts = Paginator(posts, 1) # Show 1 contacts per page.
+	page = request.GET.get('page')
+	posts = posts.get_page(page)
+	
+
 
 	context = {
 		'posts':posts,
 		'categories':categories,
-
+		
 	}
 	return render(request,'blog/blog.html',context)
+
+
+		
+
+	

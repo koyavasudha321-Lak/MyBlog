@@ -82,11 +82,14 @@
                             </li> 
 
                             <li class="nav-item ">
-                                <a class="nav-link" href="#" >
+                                <a class="nav-link" href="{% url 'dash' %}" >
                                     Dashboard
                                 </a>
                                 
                             </li> 
+
+                            
+
 
                             <li class="nav-item ">
                                 <a class="nav-link" href="{% url 'logout' %}" >
@@ -94,6 +97,7 @@
                                 </a>
                                 
                             </li> 
+                            
                             {% else %}
 
                             <li class="nav-item ">
@@ -116,8 +120,9 @@
                                 
                             </li>
                             {% endif %}
+                            
                         </ul>
-                        <!-- <a class="btn_get btn_hover" href="http://droitthemes.com/html/saasland/blog-list.html#get-app">Sign Up</a> -->
+                       
                     </div>
                 </div>
             </nav>

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    <title>Dashboard</title>
+{% endblock title %}
+
+
+{% block content %}
+
+        <section class="breadcrumb_area">
+            <img class="breadcrumb_shap" src="../static/img/banner_bg.png" alt="">
+            <div class="container">
+                <div class="breadcrumb_content text-center">
+                    <h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">About</h1>
+                    <p class="f_400 w_color f_size_16 l_height26">       
+                            Hi! I'm <b>Vasudha</b> and I'm a Passionate Coder having skills  in C, C++, JAVA, PYTHON, HTML, CSS, JS, DJANGO, AngularJS, API and  SQL.
+                                I've done 3 Projects apart from my College Curriculum and attended
+                                a lot of Technical Workshops. </p>
+                </div>
+            </div>
+        </section>
+        <section class="agency_service_area bg_color">
+            <div class="container">
+                
+                <div class="row mb_30">
+                    
+                    <div class="col-lg-8 col-sm-6 ml-auto">
+                        <div class="p_service_item agency_service_item pl_20 pr_70">
+                            <div class="icon">
+                                <img src="{% static 'img/dash1.jfif' %}"  alt="">
+                                
+                            </div>
+                            <h5 class="f_600 f_p t_color3">Total Users Registered</h5>
+                            
+
+                            <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                              <div class="card-header"> <strong>Count </strong></div>
+                              <div class="card-body">
+                                <h5 class="card-title text-white text-center"> {{ count }}
+                            </h5>
+
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+
+      
+ {% endblock content %}
