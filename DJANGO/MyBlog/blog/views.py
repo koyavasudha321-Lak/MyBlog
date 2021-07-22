@@ -43,7 +43,8 @@ def post(request,title):
 
 	return render(request, 'blog/post.html',context)
 
-
+# def entrys(request):
+# 	return redirect('entrys') 
 
 def post_comment(request):
 	if request.method == 'POST':
@@ -60,7 +61,7 @@ def post_comment(request):
 
 		return redirect('post',title=post.title)
 
-	return redirect('home')
+	return redirect('blog')##
 
 def search_view(request):
 	if request.method == 'GET':

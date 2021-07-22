@@ -1,16 +1,27 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
-
-
-
-
-
 from .models import Contact
+from django.core.paginator import Paginator
+from blog.models import Category,Post,Comment
 
 # Create your views here.
 def home(request):
 
-	return render(request, 'blog/blog.html')
+	#return render(request, 'blog/blog.html')
+	posts = Post.objects.filter(is_published=False).order_by('posted_at')
+	
+	posts = Paginator(posts, 1) # Show 25 contacts per page.
+	page = request.GET.get('page')
+	posts = posts.get_page(page)
+	
+
+	context = {
+		'posts': posts,
+		
+	}
+	return render(request,'blog/blog.html',context)
+		
+
 
 def contact(request):
 	if request.method == 'POST':
